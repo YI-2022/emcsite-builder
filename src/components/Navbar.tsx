@@ -2,12 +2,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +19,10 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
+    { 
+      name: "À Propos", 
+      href: "/#about"
+    },
     { 
       name: "Développement", 
       href: "/development",
@@ -34,19 +39,19 @@ const Navbar = () => {
       isActive: location.pathname === "/marketing"
     },
     { 
-      name: "À Propos", 
-      href: "/#about"
-    },
-    { 
       name: "Contact", 
       href: "/#contact"
     },
   ];
 
+  const handleQuoteClick = () => {
+    navigate("/#contact");
+  };
+
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-transparent"
+        isScrolled ? "bg-white shadow-sm" : "bg-white/90 backdrop-blur-md"
       }`}
     >
       <div className="container-custom">
@@ -70,7 +75,7 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Button>Démarrer</Button>
+            <Button onClick={handleQuoteClick}>Get a Quote</Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -105,7 +110,7 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Button className="w-full">Démarrer</Button>
+              <Button className="w-full" onClick={handleQuoteClick}>Get a Quote</Button>
             </div>
           </div>
         )}

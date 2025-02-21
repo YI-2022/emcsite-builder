@@ -11,8 +11,8 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Success",
-      description: "Your message has been sent. We'll get back to you soon!",
+      title: "Succès",
+      description: "Votre message a été envoyé. Nous vous recontacterons bientôt !",
     });
   };
 
@@ -20,10 +20,9 @@ const Contact = () => {
     <section id="contact" className="section-padding bg-secondary">
       <div className="container-custom">
         <div className="text-center mb-16 animate-on-scroll">
-          <h2 className="heading-lg mb-4">Get in Touch</h2>
+          <h2 className="heading-lg mb-4">Nous Contacter</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? We'd love to hear about it. Send us a message
-            and we'll get back to you as soon as possible.
+            Laissez-nous vos informations, et nous vous contacterons.
           </p>
         </div>
 
@@ -33,23 +32,23 @@ const Contact = () => {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium mb-2 block">
-                    Full Name
+                    Nom Complet
                   </label>
-                  <Input required placeholder="John Doe" />
+                  <Input required placeholder="Jean Dupont" />
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-2 block">
                     Email
                   </label>
-                  <Input required type="email" placeholder="john@example.com" />
+                  <Input required type="email" placeholder="jean@exemple.com" />
                 </div>
               </div>
               
               <div>
                 <label className="text-sm font-medium mb-2 block">
-                  Subject
+                  Sujet
                 </label>
-                <Input required placeholder="Project Discussion" />
+                <Input required placeholder="Discussion de projet" />
               </div>
               
               <div>
@@ -58,13 +57,16 @@ const Contact = () => {
                 </label>
                 <Textarea
                   required
-                  placeholder="Tell us about your project..."
+                  placeholder="Écrivez-nous quelques mots à propos de vous..."
                   className="min-h-[150px]"
                 />
+                <p className="text-sm text-muted-foreground mt-2">
+                  Nous nous efforçons de répondre à toutes les sollicitations et dans un délai raisonnable.
+                </p>
               </div>
               
               <Button type="submit" size="lg" className="w-full">
-                Send Message
+                Envoyer le Message
               </Button>
             </form>
           </div>
@@ -73,26 +75,26 @@ const Contact = () => {
             <div className="flex items-start gap-4">
               <Mail className="w-6 h-6 text-primary mt-1" />
               <div>
-                <h4 className="font-semibold mb-2">Email Us</h4>
-                <p className="text-muted-foreground">contact@example.com</p>
+                <h4 className="font-semibold mb-2">Email</h4>
+                <p className="text-muted-foreground">contact@exemple.com</p>
               </div>
             </div>
             
             <div className="flex items-start gap-4">
               <Phone className="w-6 h-6 text-primary mt-1" />
               <div>
-                <h4 className="font-semibold mb-2">Call Us</h4>
-                <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                <h4 className="font-semibold mb-2">Téléphone</h4>
+                <p className="text-muted-foreground">+212 (0) 5 22 00 00 00</p>
               </div>
             </div>
             
             <div className="flex items-start gap-4">
               <MapPin className="w-6 h-6 text-primary mt-1" />
               <div>
-                <h4 className="font-semibold mb-2">Visit Us</h4>
+                <h4 className="font-semibold mb-2">Adresse</h4>
                 <p className="text-muted-foreground">
-                  123 Business Street<br />
-                  New York, NY 10001
+                  123 Rue des Affaires<br />
+                  Casablanca, Maroc
                 </p>
               </div>
             </div>
