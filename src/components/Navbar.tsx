@@ -56,8 +56,12 @@ const Navbar = () => {
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="text-2xl font-bold">
-            EMC<span className="text-primary">PRO</span>
+          <Link to="/" className="flex items-center">
+            <img
+              src="/placeholder.svg"
+              alt="Logo"
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
