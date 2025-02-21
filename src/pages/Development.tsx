@@ -2,8 +2,15 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Development = () => {
+  const navigate = useNavigate();
+
+  const handleQuoteClick = () => {
+    navigate("/quote");
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -44,7 +51,7 @@ const Development = () => {
                     <span>Intégration de Systèmes</span>
                   </li>
                 </ul>
-                <Button size="lg">Commencer un Projet</Button>
+                <Button size="lg" onClick={handleQuoteClick}>Commencer</Button>
               </div>
               <div>
                 <img 
