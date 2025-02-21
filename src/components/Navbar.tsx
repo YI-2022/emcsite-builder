@@ -20,8 +20,8 @@ const Navbar = () => {
 
   const navLinks = [
     { 
-      name: "À Propos", 
-      href: "/#about"
+      name: "Accueil", 
+      href: "/"
     },
     { 
       name: "Développement", 
@@ -45,7 +45,7 @@ const Navbar = () => {
   ];
 
   const handleQuoteClick = () => {
-    navigate("/#contact");
+    navigate("/quote");
   };
 
   return (
